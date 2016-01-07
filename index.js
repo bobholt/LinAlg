@@ -25,11 +25,9 @@ M.getRow = (A, i) => V.from(A[i]);
 
 M.getColumn = (A, j) => V.from(A, AI => AI[j]);
 
-M.make = (rows, cols, entry) => {
-  return M.from(new V(rows), (_, i) =>
-    V.from(new V(cols), (_, j) => entry(i, j))
-  )
-}
+M.make = (rows, cols, entry) => M.from(new V(rows), (_, i) =>
+  V.from(new V(cols), (_, j) => entry(i, j))
+);
 
 class V extends M {
 
